@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js 3D Model</title>
+
+    <!-- Load A-Frame & AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Marker (Use "hiro" marker for testing) -->
+        <a-marker preset="hiro">
+            <!-- Load the 3D model (Ensure correct file path) -->
+            <a-entity 
+                gltf-model="models/scene.gltf"
+                position="0 0 0"
+                scale="0.5 0.5 0.5">
+            </a-entity>
+        </a-marker>
+
+        <!-- Camera (Tracks AR content) -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
